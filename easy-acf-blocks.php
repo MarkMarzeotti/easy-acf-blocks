@@ -36,12 +36,13 @@ if ( ! defined( 'WPINC' ) ) {
  * Rename this for your plugin and update it as you release new versions.
  */
 define( 'EASY_ACF_BLOCKS_VERSION', '1.0.0' );
+define( 'EASY_ACF_BLOCKS_DIRECTORY', plugin_dir_path( __FILE__ ) );
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-easy-acf-blocks.php';
+require EASY_ACF_BLOCKS_DIRECTORY . 'includes/class-easy-acf-blocks.php';
 
 /**
  * Begins execution of the plugin.

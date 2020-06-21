@@ -65,8 +65,7 @@ class Easy_ACF_Blocks {
 		$this->plugin_name = 'easy-acf-blocks';
 
 		$this->load_dependencies();
-		$this->define_hooks();
-
+        $this->define_hooks();
 	}
 
 	/**
@@ -91,7 +90,7 @@ class Easy_ACF_Blocks {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		// require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ch-query.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-eab-register.php';
 
 	}
 
@@ -104,7 +103,9 @@ class Easy_ACF_Blocks {
 	 */
 	private function define_hooks() {
 
-		// add_action( '', array( $this, '' ) );
+        $eab_register = new EAB_Register();
+
+		add_action( 'acf/init', array( $eab_register, 'register_theme_blocks' ) );
 
 	}
 
